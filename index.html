@@ -5,20 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Impermanência — Link Page</title>
 
-  <!-- Title font (keeps your original vibe) + clean UI font -->
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --bg: #000;
       --fg: #fff;
       --muted: #bdbdbd;
-      --accent: #fff; /* pure BW theme */
       --radius: 999px;
       --glass: rgba(255,255,255,0.04);
     }
 
-    /* Reset & layout */
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -35,7 +32,6 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Center card */
     .card{
       width:100%;
       max-width:920px;
@@ -46,14 +42,13 @@
       box-shadow: 0 10px 40px rgba(0,0,0,0.7);
     }
 
-    /* Banner area (replace banner.jpg with your image or upload via UI) */
     .banner{
       position:relative;
       height:220px;
       background-color:#0b0b0b;
       background-image:
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('banner.jpg');
+        url('tokyo-ghoul-banner.gif');
       background-size:cover;
       background-position:center;
       display:flex;
@@ -61,7 +56,6 @@
       justify-content:center;
     }
 
-    /* subtle scanline / CRT effect to match your image style */
     .banner::after{
       content:"";
       position:absolute;
@@ -79,7 +73,7 @@
       position:relative;
       text-align:center;
       z-index:2;
-      padding: 0 18px;
+      padding:0 18px;
     }
 
     .title{
@@ -91,6 +85,7 @@
       color:var(--fg);
       text-shadow: 0 6px 30px rgba(0,0,0,0.7);
     }
+
     .subtitle{
       margin-top:6px;
       color:var(--muted);
@@ -99,7 +94,6 @@
       letter-spacing:0.4px;
     }
 
-    /* Main content area containing avatar + links */
     .main{
       display:flex;
       gap:26px;
@@ -117,7 +111,6 @@
     }
 
     .avatar-wrap{
-      position:relative;
       width:120px;
       height:120px;
       border-radius:50%;
@@ -132,8 +125,8 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      display:block;
       filter:grayscale(1) contrast(0.98);
+      display:block;
     }
 
     .meta{
@@ -141,6 +134,7 @@
       font-size:0.95rem;
       line-height:1.15;
     }
+
     .meta h2{
       margin:0 0 6px 0;
       color:var(--fg);
@@ -148,7 +142,6 @@
       letter-spacing:1px;
     }
 
-    /* Links column */
     .links{
       flex:1;
       max-width:520px;
@@ -174,35 +167,15 @@
       backdrop-filter: blur(6px);
     }
 
-    .link svg{flex-shrink:0; width:22px; height:22px; opacity:0.95}
-    .link .label{flex:1; text-align:left; color:var(--fg)}
-    .link .meta{font-size:0.86rem; color:var(--muted); margin-left:8px}
-
     .link:hover{
       background:var(--fg);
       color:var(--bg);
       transform:translateY(-4px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     }
-    .link:hover svg{filter:invert(1) grayscale(1) contrast(1.1)}
 
-    /* Small control row for swapping images (optional) */
-    .controls{
-      display:flex;
-      gap:8px;
-      margin-top:6px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:0.85rem;
-      border:1px solid rgba(255,255,255,0.06);
-      background:transparent;
-      color:var(--muted);
-      cursor:pointer;
-    }
-    .btn:hover{ color:var(--fg); transform:translateY(-2px) }
+    .link svg{width:22px;height:22px}
+    .link:hover svg{filter:invert(1) grayscale(1) contrast(1.1)}
 
     footer{
       padding:14px 26px;
@@ -212,7 +185,6 @@
       text-align:center;
     }
 
-    /* Responsive */
     @media (max-width:720px){
       .banner{height:180px}
       .main{padding:18px}
@@ -223,9 +195,8 @@
   </style>
 </head>
 <body>
-  <div class="card" role="region" aria-label="Impermanência link page">
-    <!-- Banner (replace banner.jpg with your image). You can also upload via the "Trocar banner" button below. -->
-    <div class="banner" id="banner">
+  <div class="card">
+    <div class="banner">
       <div class="banner-content">
         <h1 class="title">Impermanência</h1>
         <div class="subtitle">⸸ nothing lasts forever ⸸</div>
@@ -235,122 +206,46 @@
     <div class="main">
       <div class="left">
         <div class="avatar-wrap">
-          <!-- Default avatar uses the image you had; replace src or upload -->
-          <img id="avatar" class="avatar" src="https://i.imgur.com/KTjQmsW.jpeg" alt="Avatar">
+          <img class="avatar" src="tokyo-ghoul-avatar.jpg" alt="Avatar">
         </div>
 
         <div class="meta">
           <h2>Impermanência</h2>
-          <div style="color:var(--muted)">Centralizando seus links — preto & branco, estilo pesado</div>
-
-          <div class="controls" style="margin-top:10px">
-            <label class="btn" title="Trocar avatar">
-              Trocar avatar
-              <input id="avatarInput" type="file" accept="image/*" style="display:none" />
-            </label>
-
-            <label class="btn" title="Trocar banner">
-              Trocar banner
-              <input id="bannerInput" type="file" accept="image/*" style="display:none" />
-            </label>
-
-            <button id="resetImages" class="btn" title="Resetar imagens">Resetar</button>
-          </div>
+          <div>Centralizando seus links — preto & branco, estilo pesado</div>
         </div>
       </div>
 
-      <div class="links" aria-label="Links de redes sociais">
-        <!-- Banner label above the links to make them visually grouped with banner -->
+      <div class="links">
         <div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;padding-left:6px">Redes oficiais</div>
 
-        <!-- Instagram -->
-        <a class="link" href="https://www.instagram.com/_irrelev1nt?igsh=ejE2bnppeGZlNjZy" target="_blank" rel="noopener noreferrer">
-          <!-- Camera SVG (monochrome) -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <a class="link" href="https://www.instagram.com/_irrelev1nt" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <rect x="3" y="3" width="18" height="18" rx="5"></rect>
             <circle cx="12" cy="12" r="3.2"></circle>
             <circle cx="17.5" cy="6.5" r="0.8"></circle>
           </svg>
-          <div class="label">Instagram</div>
-          <div class="meta">@_irrelev1nt</div>
+          Instagram <span style="margin-left:auto;color:var(--muted);">@_irrelev1nt</span>
         </a>
 
-        <!-- TikTok -->
-        <a class="link" href="https://www.tiktok.com/@santana._boy?_t=ZM-90bkZ6YG1u4&_r=1" target="_blank" rel="noopener noreferrer">
-          <!-- Music SVG -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <a class="link" href="https://www.tiktok.com/@santana._boy" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <path d="M9 17a4 4 0 1 0 4-4V3"></path>
             <path d="M9 17v4"></path>
           </svg>
-          <div class="label">TikTok</div>
-          <div class="meta">@santana._boy</div>
+          TikTok <span style="margin-left:auto;color:var(--muted);">@santana._boy</span>
         </a>
 
-        <!-- Discord -->
-        <a class="link" href="https://discord.gg/3tRsS3sZ" target="_blank" rel="noopener noreferrer">
-          <!-- Simple chat/alien-ish icon to fit Discord vibe -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 16c0 0-1.4 2.1-4.2 3.3a9 9 0 0 1-7.6 0C6.4 18.1 5 16 5 16"></path>
-            <path d="M8 10.5v.01"></path>
-            <path d="M16 10.5v.01"></path>
-            <path d="M8 6h8"></path>
+        <a class="link" href="https://discord.gg/3tRsS3sZ" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M21 16s-1.4 2.1-4.2 3.3a9 9 0 0 1-7.6 0C6.4 18.1 5 16 5 16"></path>
+            <path d="M8 10.5v.01M16 10.5v.01M8 6h8"></path>
           </svg>
-          <div class="label">Discord</div>
-          <div class="meta">Perfil oficial</div>
+          Discord <span style="margin-left:auto;color:var(--muted);">Perfil oficial</span>
         </a>
-
       </div>
     </div>
 
-    <footer>Feito por Impermanência — estilo em P&B, pronto para ajustes</footer>
+    <footer>Feito por Impermanência — estilo em P&B, inspirado em Tokyo Ghoul</footer>
   </div>
-
-  <script>
-    // Small UI helpers: allow changing avatar/banner live (local preview)
-    const avatarInput = document.getElementById('avatarInput');
-    const bannerInput = document.getElementById('bannerInput');
-    const avatarImg = document.getElementById('avatar');
-    const bannerEl = document.getElementById('banner');
-    const resetBtn = document.getElementById('resetImages');
-
-    const defaults = {
-      avatar: avatarImg.src,
-      bannerStyle: bannerEl.style.backgroundImage || ''
-    };
-
-    // When user clicks the visible label, it triggers the hidden input (#avatarInput / #bannerInput)
-    // We handle file selection and preview using object URLs (not uploaded anywhere).
-    avatarInput.addEventListener('change', e => {
-      const f = e.target.files && e.target.files[0];
-      if(!f) return;
-      const url = URL.createObjectURL(f);
-      avatarImg.src = url;
-    });
-
-    bannerInput.addEventListener('change', e => {
-      const f = e.target.files && e.target.files[0];
-      if(!f) return;
-      const url = URL.createObjectURL(f);
-      bannerEl.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${url}')`;
-    });
-
-    resetBtn.addEventListener('click', () => {
-      avatarImg.src = defaults.avatar;
-      bannerEl.style.backgroundImage = defaults.bannerStyle || "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('banner.jpg')";
-      avatarInput.value = '';
-      bannerInput.value = '';
-    });
-
-    // Accessibility: pressing Enter on label triggers file input
-    document.querySelectorAll('label.btn').forEach(l => {
-      l.addEventListener('keydown', (ev) => {
-        if(ev.key === 'Enter' || ev.key === ' ') {
-          ev.preventDefault();
-          const input = l.querySelector('input[type="file"]');
-          if(input) input.click();
-        }
-      });
-    });
-  </script>
 </body>
 </html>
