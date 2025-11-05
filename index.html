@@ -54,6 +54,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      background-blend-mode: overlay;
     }
 
     .banner::after{
@@ -170,7 +171,7 @@
     .link:hover{
       background:var(--fg);
       color:var(--bg);
-      transform:translateY(-4px);
+      transform:translateY(-4px) scale(1.02);
       box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     }
 
@@ -194,6 +195,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="card">
     <div class="banner">
@@ -206,7 +208,7 @@
     <div class="main">
       <div class="left">
         <div class="avatar-wrap">
-          <img class="avatar" src="tokyo-ghoul-avatar.jpg" alt="Avatar">
+          <img class="avatar" src="tokyo-ghoul-avatar.jpg" alt="Foto de perfil de Impermanência">
         </div>
 
         <div class="meta">
@@ -218,16 +220,18 @@
       <div class="links">
         <div style="font-size:0.78rem;color:var(--muted);margin-bottom:6px;padding-left:6px">Redes oficiais</div>
 
-        <a class="link" href="https://www.tiktok.com/@sleepeeyess?_r=1&_t=ZS-919gvCLOa0e" target="_blank">
+        <!-- Instagram -->
+        <a class="link" href="https://www.instagram.com/sleeepyeeyess?igsh=azZpZGg2bjZud2g5" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-            <circle cx="12" cy="12" r="3.2"></circle>
-            <circle cx="17.5" cy="6.5" r="0.8"></circle>
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
-          Instagram <span style="margin-left:auto;color:var(--muted);">@_irrelev1nt</span>
+          Instagram <span style="margin-left:auto;color:var(--muted);">@sleeepyeeyess</span>
         </a>
 
-        <a class="link" href="https://www.instagram.com/sleeepyeeyess?igsh=azZpZGg2bjZud2g5" target="_blank">
+        <!-- TikTok -->
+        <a class="link" href="https://www.tiktok.com/@sleepeeyess?_r=1&_t=ZS-919gvCLOa0e" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <path d="M9 17a4 4 0 1 0 4-4V3"></path>
             <path d="M9 17v4"></path>
@@ -235,7 +239,8 @@
           TikTok <span style="margin-left:auto;color:var(--muted);">@santana._boy</span>
         </a>
 
-        <a class="link" href="https://discord.gg/XNye46zN" target="_blank">
+        <!-- Discord -->
+        <a class="link" href="https://discord.gg/XNye46zN" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <path d="M21 16s-1.4 2.1-4.2 3.3a9 9 0 0 1-7.6 0C6.4 18.1 5 16 5 16"></path>
             <path d="M8 10.5v.01M16 10.5v.01M8 6h8"></path>
