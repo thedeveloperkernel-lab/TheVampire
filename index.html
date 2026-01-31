@@ -5,151 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hael</title>
 
-  <!-- Fonte gótica idêntica -->
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
       min-height:100vh;
       background:#000;
       font-family:'Inter',sans-serif;
-      color:#e5e5e5;
+      color:#eaeaea;
       display:flex;
-      align-items:center;
       justify-content:center;
+      align-items:center;
     }
 
-    .card {
+    .card{
       width:100%;
-      max-width:460px;
-      background:rgba(0,0,0,0.75);
-      border-radius:20px;
-      box-shadow:0 0 80px rgba(0,0,0,0.95);
+      max-width:480px;
+      background:rgba(0,0,0,0.85);
+      border-radius:22px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,0.06);
+      box-shadow:0 0 100px rgba(0,0,0,0.95);
+      border:1px solid rgba(255,255,255,0.05);
     }
 
-    .banner {
-      height:200px;
-      background:url('banner.jpg') center/cover no-repeat;
-      filter:grayscale(100%) contrast(120%) brightness(70%);
+    /* BANNER GIF */
+    .banner{
       position:relative;
+      height:240px;
+      overflow:hidden;
+    }
+
+    .banner video,.banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:grayscale(100%) contrast(125%) brightness(55%);
     }
 
     .banner::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(to bottom, transparent, #000);
+      background:radial-gradient(circle at center, rgba(0,0,0,0.2), #000 75%);
     }
 
-    .title {
+    .banner-content{
       position:absolute;
-      top:40px;
-      width:100%;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
       text-align:center;
+      z-index:2;
+      gap:8px;
+    }
+
+    .banner-content h1{
       font-family:'UnifrakturCook',serif;
-      font-size:38px;
-      z-index:2;
-    }
-
-    .subtitle{
-      position:absolute;
-      top:86px;
-      width:100%;
-      text-align:center;
-      font-size:13px;
-      color:#aaa;
+      font-size:42px;
       letter-spacing:1px;
-      z-index:2;
     }
 
+    .banner-content span{
+      font-size:13px;
+      letter-spacing:2px;
+      color:#aaa;
+    }
+
+    /* PERFIL */
     .profile{
       display:flex;
-      gap:16px;
-      padding:24px;
       align-items:center;
+      gap:18px;
+      padding:28px 26px 22px;
     }
 
     .avatar{
-      width:84px;
-      height:84px;
+      width:96px;
+      height:96px;
       border-radius:50%;
-      border:2px solid #111;
       background:url('avatar.jpg') center/cover no-repeat;
-      filter:grayscale(100%) contrast(120%);
+      filter:grayscale(100%) contrast(125%);
+      border:3px solid #000;
+      box-shadow:0 0 30px rgba(0,0,0,0.9);
       flex-shrink:0;
     }
 
-    .profile-text h2{
-      font-size:18px;
-      font-weight:500;
-    }
+    .profile-text h2{font-size:20px;font-weight:500}
+    .profile-text p{font-size:13px;color:#aaa;margin-top:4px;max-width:260px}
 
-    .profile-text p{
-      font-size:13px;
-      color:#aaa;
-      margin-top:4px;
-    }
-
-    .gif{
-      display:flex;
-      justify-content:center;
-      margin:10px 0 22px;
-    }
-
-    .gif img{
-      width:180px;
-      filter:grayscale(100%) contrast(120%);
-      opacity:.85;
-      border-radius:12px;
-    }
-
-    .links{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      padding:0 24px 26px;
-    }
+    /* LINKS */
+    .links{padding:0 26px 28px;display:flex;flex-direction:column;gap:14px}
 
     .link{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 18px;
-      background:#0b0b0b;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.06);
+      padding:15px 18px;
+      background:linear-gradient(180deg,#0e0e0e,#080808);
+      border-radius:16px;
       text-decoration:none;
       color:#fff;
-      transition:.15s;
+      border:1px solid rgba(255,255,255,0.06);
+      transition:.18s ease;
     }
 
     .link:hover{
-      transform:translateY(-2px);
-      border-color:rgba(255,255,255,0.15);
+      transform:translateY(-2px) scale(1.01);
+      border-color:rgba(255,255,255,0.18);
+      box-shadow:0 10px 30px rgba(0,0,0,0.8);
     }
 
-    .left{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+    .left{display:flex;align-items:center;gap:12px}
 
     .icon{
-      width:34px;
-      height:34px;
+      width:36px;
+      height:36px;
       border-radius:50%;
       background:#111;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:14px;
+      font-size:15px;
     }
 
     footer{
@@ -162,53 +142,47 @@
 </head>
 <body>
 
-  <div class="card">
+<div class="card">
 
-    <div class="banner" style="background:#000; display:flex; align-items:center; justify-content:center;">
-      <img src="motion.gif" alt="banner gif" style="
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        filter:grayscale(100%) contrast(120%) brightness(70%);
-      ">
-      <div class="title">Hael</div>
-      <div class="subtitle">+ nothing lasts forever +</div>
+  <!-- BANNER COM GIF -->
+  <div class="banner">
+    <img src="motion.gif" alt="banner" />
+    <div class="banner-content">
+      <h1>Hael</h1>
+      <span>+ NOTHING LASTS FOREVER +</span>
     </div>
-      <div class="subtitle">+ nothing lasts forever +</div>
-    </div>
-
-    <div class="profile">
-      <div class="avatar"></div>
-      <div class="profile-text">
-        <h2>Hael</h2>
-        <p>Centralizando seus links — preto & branco</p>
-      </div>
-    </div>
-
-    
-
-    <div class="links">
-      <a class="link" href="https://www.tiktok.com/@dqrrkvveil" target="_blank">
-        <div class="left"><div class="icon"><i class="fab fa-tiktok"></i></div> TikTok</div>
-        <small>@dqrrkvveil</small>
-      </a>
-
-      <a class="link" href="https://www.roblox.com/share?code=b4a6c8a2043d2f4ab7009a278b56eefe&type=Profile&source=ProfileShare&stamp=1769826665109" target="_blank">
-        <div class="left"><div class="icon"><i class="fas fa-gamepad"></i></div> Roblox</div>
-        <small>Adicionar amigo</small>
-      </a>
-
-      <a class="link" href="https://discord.com/users/1401125698139066369" target="_blank">
-        <div class="left"><div class="icon"><i class="fab fa-discord"></i></div> Discord</div>
-        <small>Perfil oficial</small>
-      </a>
-    </div>
-
-    <footer>
-      Feito no escuro — estilo P&B
-    </footer>
-
   </div>
+
+  <!-- PERFIL -->
+  <div class="profile">
+    <div class="avatar"></div>
+    <div class="profile-text">
+      <h2>Hael</h2>
+      <p>Centralizando seus links — preto & branco, presença pesada</p>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="links">
+    <a class="link" href="https://www.tiktok.com/@dqrrkvveil" target="_blank">
+      <div class="left"><div class="icon"><i class="fab fa-tiktok"></i></div>TikTok</div>
+      <small>@dqrrkvveil</small>
+    </a>
+
+    <a class="link" href="https://www.roblox.com/share?code=b4a6c8a2043d2f4ab7009a278b56eefe&type=Profile&source=ProfileShare&stamp=1769826665109" target="_blank">
+      <div class="left"><div class="icon"><i class="fas fa-gamepad"></i></div>Roblox</div>
+      <small>Adicionar amigo</small>
+    </a>
+
+    <a class="link" href="https://discord.com/users/1401125698139066369" target="_blank">
+      <div class="left"><div class="icon"><i class="fab fa-discord"></i></div>Discord</div>
+      <small>Perfil oficial</small>
+    </a>
+  </div>
+
+  <footer>feito no escuro</footer>
+
+</div>
 
 </body>
 </html>
