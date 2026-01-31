@@ -1,175 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yaraa ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hael</title>
 
-<style>
-body {
-  margin: 0;
-  background: linear-gradient(to bottom, #000000, #4b0000);
-  color: #ff6b6b;
-  font-family: 'Indie Flower', cursive;
-  text-align: center;
-  overflow-x: hidden;
-}
+  <!-- Fonte gótica -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 4.5em;
-  margin-top: 20px;
-  text-shadow: 0 0 25px #ff4b4b;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.intro {
-  font-size: 1.8em;
-  line-height: 2em;
-  max-width: 900px;
-  margin: 25px auto 50px auto;
-  text-align: center;
-  padding: 0 15px;
-}
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #111 0%, #000 70%);
+      color: #eaeaea;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Galeria */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 40px;
-}
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 24px;
+      background: rgba(0,0,0,0.65);
+      border-radius: 18px;
+      box-shadow: 0 0 60px rgba(0,0,0,0.9);
+      backdrop-filter: blur(8px);
+    }
 
-.gallery img {
-  width: 200px;
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255,0,0,0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
-.gallery img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 35px rgba(255,0,0,0.8);
-}
+    header h1 {
+      font-family: 'UnifrakturCook', serif;
+      font-size: 38px;
+      letter-spacing: 1px;
+    }
 
-/* Botão música */
-.music-btn {
-  margin: 20px auto;
-  padding: 16px 40px;
-  background: #8b0000;
-  color: #ff6b6b;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.4em;
-  font-weight: bold;
-  cursor: pointer;
-  display: block;
-  transition: transform 0.3s, background 0.3s;
-}
+    header p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #aaa;
+      opacity: 0.85;
+    }
 
-.music-btn:hover {
-  transform: scale(1.05);
-  background: #ff0000;
-}
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-/* Carta e botão */
-.btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 18px 45px;
-  background: #8b0000;
-  color: #ff6b6b;
-  text-decoration: none;
-  border-radius: 35px;
-  font-size: 1.4em;
-  transition: transform 0.3s, background 0.3s;
-}
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: linear-gradient(180deg, #111, #080808);
+      border-radius: 14px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border 0.15s ease;
+    }
 
-.btn:hover {
-  transform: scale(1.05);
-  background: #ff0000;
-}
+    .link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
 
-/* Contador */
-.contador {
-  margin-top: 35px;
-  font-size: 1.4em;
-  color: #ff9999;
-  font-weight: bold;
-}
+    .link span {
+      font-weight: 500;
+      font-size: 15px;
+    }
 
-/* Responsividade */
-@media (max-width: 500px) {
-  .gallery img {
-    width: 140px;
-  }
-  .intro {
-    font-size: 1.5em;
-  }
-}
-</style>
+    .link small {
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .qr {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .qr img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Yaraa ❤️</h1>
+  <div class="container">
+    <header>
+      <h1>Hael</h1>
+      <p>nothing lasts forever</p>
+    </header>
 
-<p class="intro">
-Entre risadas, brincadeiras e aventuras online, eu e você construímos algo especial.  
-Houve momentos com nossa amiga Juh, mas sempre soube que você tinha um lugar único no meu coração.  
-Cada jogatina, cada pequeno foguinho que criamos juntos, cada mensagem e cada risada me mostraram o quanto te amo e quero estar sempre ao seu lado.<br><br>
-Este site é só um pedacinho de tudo o que sinto, um reflexo de um amor que só cresce a cada dia.
-</p>
+    <section class="links">
+      <!-- Discord amizade -->
+      <a class="link" href="https://discord.com/users/1401125698139066369" target="_blank">
+        <span>Discord</span>
+        <small>Adicionar amizade</small>
+      </a>
 
-<div class="gallery" id="galeria"></div>
+      <!-- TikTok perfil -->
+      <a class="link" href="https://www.tiktok.com/@dqrrkvveil" target="_blank">
+        <span>TikTok</span>
+        <small>Perfil oficial</small>
+      </a>
 
-<button class="music-btn" id="botaoMusica">🎧 Tocar nossa música</button>
+      <!-- Roblox amizade -->
+      <a class="link" href="https://www.roblox.com/share?code=b4a6c8a2043d2f4ab7009a278b56eefe&type=Profile&source=ProfileShare&stamp=1769826665109" target="_blank">
+        <span>Roblox</span>
+        <small>Adicionar amigo</small>
+      </a>
+    </section>
 
-<a href="carta.html" class="btn">Ler minha carta 💌</a>
+        </div>
 
-<div class="contador" id="contador"></div>
-
-<audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-// Galeria de fotos/GIFs da Yaraa
-const imagens = [
-  "yaraa1.gif",
-  "yaraa2.jpg",
-  "yaraa3.gif"
-];
-
-const galeria = document.getElementById("galeria");
-imagens.forEach(src => {
-  const img = document.createElement("img");
-  img.src = src;
-  galeria.appendChild(img);
-});
-
-// Contador de dias juntos desde 10 de janeiro de 2026
-const inicio = new Date(2026,0,10);
-const hoje = new Date();
-const diff = hoje - inicio;
-const dias = Math.floor(diff / (1000*60*60*24));
-document.getElementById("contador").innerText = `Juntos desde 10 de janeiro de 2026 ❤️ (${dias} dias)`;
-
-// Música
-const audio = document.getElementById("musica");
-const botao = document.getElementById("botaoMusica");
-botao.addEventListener("click", () => {
-  if(audio.paused){
-    audio.play();
-    botao.innerText = "⏸️ Pausar música";
-  }else{
-    audio.pause();
-    botao.innerText = "🎧 Tocar nossa música";
-  }
-});
-</script>
+    <footer>
+      feito no escuro
+    </footer>
+  </div>
 
 </body>
 </html>
