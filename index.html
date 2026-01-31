@@ -48,7 +48,10 @@
       content:"";
       position:absolute;
       inset:0;
-      background:radial-gradient(circle at center, rgba(0,0,0,0.2), #000 75%);
+      background:
+        radial-gradient(circle at center, rgba(0,0,0,0.15), #000 75%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.05"/></svg>');
+      mix-blend-mode: overlay;
     }
 
     .banner-content{
@@ -67,12 +70,14 @@
       font-family:'UnifrakturCook',serif;
       font-size:42px;
       letter-spacing:1px;
+      animation: fadeIn 2.2s ease forwards;
     }
 
     .banner-content span{
       font-size:13px;
       letter-spacing:2px;
       color:#b5b5b5;
+      animation: fadeIn 3s ease forwards;
     }
 
     /* PERFIL */
@@ -132,12 +137,7 @@
       font-size:15px;
     }
 
-    footer{
-      text-align:center;
-      font-size:12px;
-      color:#666;
-      padding-bottom:18px;
-    }
+    footer{display:none;}
   </style>
 </head>
 <body>
